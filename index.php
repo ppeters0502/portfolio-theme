@@ -13,10 +13,6 @@
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
    
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,11 +22,10 @@
 <?php get_header(); ?>
 </head>
 
-
 <div class="header-container">
     	<div class="video-container">
-        <video preload = "true" autoplay = "autoplay" loop = "loop" volume="0" poster = "http://localhost/portfolio/wp-content/uploads/kitty.jpg" >
-        <source src = "http://localhost/portfolio/wp-content/themes/portfolio-theme/video/kitty.mp4" type = "video/mp4" > 
+        <video preload = "true" autoplay = "autoplay" loop = "loop" volume="0" poster ="http://localhost/portfolio/wp-content/uploads/kitty.jpg" >
+        <source src = "<?php bloginfo('url'); ?>/wp-content/themes/portfolio-theme/video/kitty.mp4" type = "video/mp4" > 
         </video>
         <div class="col-lg-12 text-center video-headline">
         <h1>Hello, I'm Pat Peters</h1>
@@ -115,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="col-sm-3">
-                    <img class="img-circle img-responsive img-center" src="img/bio-pic.jpg" alt="">
+                    <img class="img-circle img-responsive img-center" src="<?php bloginfo('url'); ?>/wp-content/themes/portfolio-theme/img/bio-pic.jpg" alt="">
                     </div>
                     <div class="col-md-9">
                     <h2>About Me</h2>
@@ -128,13 +123,13 @@
         <!-- /.container -->
     </section>
     <!-- Callout -->
-    <aside class="callout">
+    <div class="callout">
         <div class="text-vertical-center">
             <h1>Follow my personal blog of projects!</h1>
             </br>
             <a href=# class="btn btn-dark">See my blog</a>
         </div>
-    </aside>
+    </div>
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
@@ -147,28 +142,28 @@
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-1.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-2.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-3.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-4.jpg">
                                 </a>
                             </div>
                         </div>
@@ -204,42 +199,4 @@
             </small>
         </iframe>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Pat Peters</strong>
-                    </h4>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (712) 308-6136</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:pspeters93@gmail.com">pspeters93@gmail.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/patrick.s.peters.3"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/Pat_Peters?lang=en"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/ppeters0502/?hl=en"><i class="fa fa-instagram fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/patrick-peters-1641b99b?trk=nav_responsive_tab_profile_pic">
-                            <i class="fa fa-linkedin fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Pat Peters 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+<?php get_footer(); ?>

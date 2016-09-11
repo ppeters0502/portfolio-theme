@@ -25,7 +25,7 @@
             </li>
         </ul>
     </nav>
-<header id="header" role="banner">
+</div>
 <?php wp_head();?>
-</header>
-<div id="container">
+
+
