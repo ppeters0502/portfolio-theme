@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_load_scripts()
 {
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'));
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('menu-options', get_template_directory_uri() . '/js/menu-options.js', array('jquery'));
 
 }
