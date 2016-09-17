@@ -139,34 +139,20 @@
                     <h2>My Work</h2>
                     <hr class="small">
                     <div class="row">
+                    <?php 
+                    $newsposts = get_posts('cat=19&posts_per_page=4');
+                    foreach($newsposts as $post) :
+                    setup_postdata($post); ?>
+
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a href="<?php the_permalink(); ?>">
                                     <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-1.jpg">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-2.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-3.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-4.jpg">
-                                </a>
-                            </div>
-                        </div>
+                    <?php endforeach; ?>
+                        
                     </div>
                     <!-- /.row (nested) -->
                     <a href="#" class="btn btn-dark">View More Items</a>
