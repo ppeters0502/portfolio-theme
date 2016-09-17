@@ -8,6 +8,8 @@ function blankslate_setup()
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	//CREATE CUSTOM IMAGE SIZES
+	add_image_size( 'port-page', 500, 333, true ); 
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 640;
 	register_nav_menus(

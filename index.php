@@ -142,16 +142,21 @@
                     <?php 
                     $newsposts = get_posts('cat=19&posts_per_page=4');
                     foreach($newsposts as $post) :
-                    setup_postdata($post); ?>
+                    setup_postdata($post); 
+                        if ( has_post_thumbnail($post->ID) ) { ?>
 
+                            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'port-page'); ?>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="<?php the_permalink(); ?>">
-                                    <img class="img-portfolio img-responsive" src="<?php bloginfo('url'); ?>/wp-content/uploads/portfolio-1.jpg">
+                                    
+                                    <?php the_post_thumbnail('port-page', array('class' => 'img-portfolio img-responsive')); ?>
+                                    
                                 </a>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                        <?php }
+                     endforeach; ?>
                         
                     </div>
                     <!-- /.row (nested) -->
