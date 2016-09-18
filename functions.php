@@ -1,7 +1,5 @@
 <?php
 
-
-
 function blankslate_setup()
 {
 	load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );

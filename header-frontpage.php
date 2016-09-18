@@ -9,19 +9,19 @@
                 <a href="#top"  onclick = $("#menu-close").click(); >PatPeters.org</a>
             </li>
             <li>
-                <a href="<?php bloginfo('url');?>#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
-                <a href="<?php bloginfo('url');?>#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = $("#menu-close").click(); >About</a>
             </li>
             <li>
-                <a href="<?php bloginfo('url');?>#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
             </li>
             <li>
-                <a href="<?php bloginfo('url');?>#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
             </li>
             <li>
-                <a href="<?php bloginfo('url');?>#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
             </li>
         </ul>
     </nav>
