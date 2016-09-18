@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Post Template: Portfolio entry
+ * Single Post Template: Blog entry
  *
  * @package WordPress
  * @subpackage portfolio-theme
