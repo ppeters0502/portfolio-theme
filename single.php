@@ -21,15 +21,17 @@
         </div>
         <!--Portfolio content-->
          <div class="row">
-
+         <div class="container">
             <div class="col-md-8">
                 <?php the_post_thumbnail('port-page', array('class' => 'img-portfolio img-responsive')); ?>
+                <br/>
             </div>
 
             <div class="col-md-4">
                 <h3>Project Description</h3>
                 <?php the_content(); ?>
             </div>
+         </div>
  <?php endwhile; ?>
  <?php wp_reset_postdata(); ?>
         </div>

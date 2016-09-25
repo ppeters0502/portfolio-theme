@@ -107,12 +107,12 @@
  <!-- About -->
     <section id="about" class="about">
         <div class="container">
-            <div class="row">
+            <div class="row about-me">
                 <div class="col-lg-12 text-center">
                     <div class="col-sm-3">
                     <img class="img-circle img-responsive img-center" src="<?php bloginfo('url'); ?>/wp-content/themes/portfolio-theme/img/bio-pic.jpg" alt="">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" style="background-color:#FFFFFF;">
                     <h2>About Me</h2>
                     <p class="lead" style="text-align:justify;">Hello, my name is Patrick Peters. I am 25 years old, and live in Omaha Nebraska. I graduated from the University of Nebraska Omaha in 2013 with a Bachelors Degree in Music Performance - Technology Emphasis. I have 3 years working experience in the tech industry, and 5 years of freelance experience building websites, designing web graphics and brand icons, and producing audio and video for clients. I'm currently in Graduate School for Computer Science, and am building up my experience in software development, while working in the tech indestry.</br>Check out my <a href="#portfolio" >Professional Portfolio!</a></p>
                     </div>
