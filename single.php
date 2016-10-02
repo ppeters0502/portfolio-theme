@@ -11,6 +11,7 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <!-- Portfolio Item Heading -->
+        <section class="portfolio">
         <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -20,6 +21,7 @@
             </div>
         </div>
         <!--Portfolio content-->
+        
          <div class="row">
          <div class="container">
             <div class="col-md-8">
@@ -27,7 +29,7 @@
                 <br/>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" style="background-color:#FFFFFF;">
                 <h3>Project Description</h3>
                 <?php the_content(); ?>
             </div>
@@ -36,6 +38,7 @@
  <?php wp_reset_postdata(); ?>
         </div>
     </div>
+        </section>
 <section  class="bg-primary">
 
             <div class="row text-center">

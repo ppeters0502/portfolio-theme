@@ -137,7 +137,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h2>My Work</h2>
-                    <hr class="small">
+                    <hr class="large">
                     <div class="row">
                     <?php 
                     $newsposts = get_posts('cat=19&posts_per_page=4');
