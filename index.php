@@ -127,7 +127,7 @@
         <div class="text-vertical-center">
             <h1>Follow my personal blog of projects!</h1>
             </br>
-            <a href=# class="btn btn-dark">See my blog</a>
+            <a href="http://localhost/portfolio/wp-content/themes/portfolio-theme/blog.html" class="btn btn-dark">See my blog</a>
         </div>
     </div>
 

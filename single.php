@@ -39,7 +39,7 @@
         </div>
     </div>
         </section>
-<section  class="bg-primary">
+<section  class="callout">
 
             <div class="row text-center">
             <div class="col-lg-12">
