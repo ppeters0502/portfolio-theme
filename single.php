@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Post Template: Portfolio entry
+ * Single Post Template: Blog entry
  *
  * @package WordPress
  * @subpackage portfolio-theme
@@ -10,75 +10,124 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>" />
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <!-- Portfolio Item Heading -->
-        <section class="portfolio">
-        <div class="container">
+ <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"><?php the_title(); ?> |
-                    <small><?php the_subtitle(); ?></small>
-                </h1>
-            </div>
-        </div>
-        <!--Portfolio content-->
-        
-         <div class="row">
-         <div class="container">
-            <div class="col-md-8">
-                <?php the_post_thumbnail('port-page', array('class' => 'img-portfolio img-responsive')); ?>
-                <br/>
-            </div>
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1><?php the_title(); ?></h1>
 
-            <div class="col-md-4" style="background-color:#FFFFFF;">
-                <h3>Project Description</h3>
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#"><?php the_author(); ?></a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> <?php the_time('l, F j, Y'); ?></p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <div class="col-md-8">
+                    <?php the_post_thumbnail('port-page', array('class' => 'img-portfolio img-responsive')); ?>
+                </div>
+
+                <hr>
+
+                <!-- Post Content -->
                 <?php the_content(); ?>
-            </div>
-         </div>
- <?php endwhile; ?>
- <?php wp_reset_postdata(); ?>
-        </div>
-    </div>
-        </section>
-<section  class="callout">
 
-            <div class="row text-center">
-            <div class="col-lg-12">
-                <h3 class="page-header">Related Projects</h3>
-            </div>
-            <div class="col-lg-10 col-lg-offset-1">
-            	<?php 
-            	$categories = get_the_category(); 
-            	foreach ($categories as $category ) :
-            	?>
+                <hr>
 
-            	<?php 
-            	$args = array(
-            		'numberposts' => 3,
-            		'category' => $category->term_id,
-            		'post__not_in' => array( $post->ID )
-            		);
-            	$posts = get_posts($args);
-            	foreach($posts as $post) : ?>
-            	<div class="col-sm-3 col-xs-6">
-                	<a href="<?php the_permalink(); ?>">
-                    	<?php the_post_thumbnail('port-page', array('class' => 'img-responsive portfolio-item')); ?>
-                	</a>
-            	</div>
-            <?php endforeach; ?>
-            <?php endforeach; ?>
-            <?php wp_reset_postdata(); ?>
-            </div>
-            
+                <!-- Blog Comments -->
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
 
-           
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <!-- Nested Comment -->
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nested Start Bootstrap
+                                    <small>August 25, 2014 at 9:30 PM</small>
+                                </h4>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </div>
+                        <!-- End Nested Comment -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+            </div>
 
         </div>
         <!-- /.row -->
 
         <hr>
+
+        <!-- Footer -->
+        <?php get_footer(); ?>
+
     </div>
- </section>
-<?php endif; ?>
-<?php get_footer(); ?>
-
-
+    <!-- /.container -->
