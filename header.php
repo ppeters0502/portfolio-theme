@@ -21,6 +21,9 @@
                 <a href="<?php bloginfo('url');?>#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
             </li>
             <li>
+                <a href="<?php bloginfo('url');?>/?page_id=603">Blog</a>
+            </li>
+            <li>
                 <a href="<?php bloginfo('url');?>#contact" onclick = $("#menu-close").click(); >Contact</a>
             </li>
         </ul>
