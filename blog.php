@@ -22,8 +22,24 @@
                 <center><h1 class="page-header">
                     Pat's Blog of Projects
                 </h1></center>
-                <?php query_posts('cat=3');?>
-                <?php if(have_posts()): while(have_posts()) : the_post();; ?>
+                <?php 
+                //Set up arguments for the custom query
+                $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+                $query_args = array(
+                    'post_type' => 'post',
+                    'category_name' => 'Projects',
+                    'posts_per_page' => 5,
+                    'paged' => $paged
+
+                    );
+                //With the arguments set up, now it's time to create a new instance of WP_Query
+                $the_query = new WP_Query( $query_args );
+                ?>
+
+
+
+                <?php if( $the_query->have_posts()): while($the_query->have_posts()) : $the_query->the_post(); ?>
                 <!-- Blog Post -->
                 <div class="row col-lg-12 about">
                     <div class="col-lg-12" style="margin-bottom:30px;">
@@ -55,6 +71,24 @@
                 </div>
                 <?php endwhile; ?>
             <?php endif; ?>
+            <?php 
+            //Now for the pagination fun!
+            if ($the_query->max_num_pages > 1) { //checks if the max number of pages is greater than 1 
+            ?>
+            <nav class="prev-next-posts">
+                <center><div class="prev-posts-link">
+                    <?php echo get_next_posts_link('Older Entries', $the_query->max_num_pages); 
+                    //displays older posts link.
+                    ?>
+                </div></center></br>
+                <center><div class="next-posts-link">
+                    <?php echo get_previous_posts_link( 'Newer Entries' );
+                    //displays newer posts link.
+                    ?>
+                </div></center>
+            </nav>
+
+            <?php } ?>
 
                 <hr>
                

@@ -205,7 +205,7 @@ hr.small {
 
 .services {
     padding: 60px 0;
-    margin-top:8%;
+    /*margin-top:8%;*/
 }
 
 .service-item {
@@ -291,13 +291,13 @@ footer {
 
 }
 
-video-container
+.video-container
 {
 	position:absolute;
 	top:0%;
 	left:0%;
-	height:100%;
 	width:100%;
+    height:100%;
 	overflow:hidden;
 }
 
@@ -320,4 +320,106 @@ video
 	color:#3cbc8d;
 }
 
+@media(max-width:1000px) {
+.services
+{
+    margin-top:-75%;
+}
 
+.video-container 
+{
+    position:relative;
+    max-width:1200px;
+    height:auto;
+}
+}
+
+@media(max-width:700px) {
+
+.services
+{
+    margin-top:-75%;
+}
+
+.video-container 
+{
+    position:relative;
+    max-width:720px;
+    height:auto;
+}
+}
+
+@media(max-width:500px) {
+.services
+{
+    margin-top:-100%;
+}
+
+.video-container 
+{
+    position:relative;
+    max-width:600px;
+    height:auto;
+}
+
+}
+
+/***********************************************************************
+***********Comments Section*********************************************
+***********************************************************************/
+.comments ul
+{
+    list-style-type: none;
+}
+
+.comments li:nth-child(odd)
+{
+    background-color:#ececec;
+    margin-bottom:20px;
+}
+
+.comments li:nth-child(even)
+{
+    background-color:#ccddf2;
+    margin-bottom:20px;
+}
+
+#respond { 
+background: #ececec;
+padding:0 5px 0 5px;
+}
+
+/* Highlight active form field */
+
+#respond input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+ 
+#respond input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#respond input[type=submit]
+{
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+#respond input[type=submit]:hover,
+#respond input[type=submit]:focus,
+#respond input[type=submit]:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid black;
+}
